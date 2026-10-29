@@ -1,0 +1,199 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --page-bg: #fff8f3;
+  --ink: #181818;
+  --muted: #55545a;
+  --orange: #fd6e0a;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background: var(--page-bg);
+  color: var(--ink);
+  font-family: "Open Sans", Arial, sans-serif;
+  border-top: 1px solid #d9d2ce;
+}
+
+.header {
+  width: 100%;
+  position: relative;
+  z-index: 5;
+}
+.navbar {
+  height: 110px;
+  width: min(750px, calc(100% - 60px));
+  margin-left: max(calc((100% - 750px) / 2), 22%);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: 31px;
+}
+.logo {
+  color: #202020;
+  text-decoration: none;
+  font-size: 31px;
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+.logo span { color: var(--orange); }
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  padding-top: 1px;
+}
+.nav-links a {
+  color: #4e4a49;
+  text-decoration: none;
+  font-size: 13px;
+  white-space: nowrap;
+}
+.nav-links .hire-button {
+  color: white;
+  font-weight: 700;
+  background: var(--orange);
+  padding: 14px 21px;
+  border-radius: 4px;
+  margin-top: -1px;
+}
+
+.side-text {
+  position: fixed;
+  left: 20px;
+  top: 17px;
+  height: 530px;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  color: #ded8d4;
+  font-size: 65px;
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: 7px;
+  user-select: none;
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  min-height: 434px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+.hero-copy {
+  position: relative;
+  z-index: 3;
+  width: 54%;
+  padding-left: max(calc((100% - 745px) / 2), 21.5%);
+  padding-top: 1px;
+  flex-shrink: 0;
+}
+.eyebrow {
+  font-size: 28px;
+  font-weight: 600;
+  color: #303039;
+  margin-bottom: 3px;
+}
+h1 {
+  font-size: clamp(42px, 4.4vw, 58px);
+  line-height: 1.25;
+  letter-spacing: -1.6px;
+  font-weight: 800;
+  white-space: nowrap;
+  margin-bottom: 12px;
+}
+.intro {
+  font-size: 12px;
+  line-height: 1.55;
+  color: #66636a;
+  max-width: 490px;
+  margin-bottom: 22px;
+}
+.actions { display: flex; gap: 20px; }
+.outline-button {
+  min-height: 47px;
+  padding: 0 19px;
+  border: 1px solid var(--orange);
+  border-radius: 3px;
+  color: var(--orange);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: .2px;
+  transition: background .2s ease, color .2s ease;
+}
+.outline-button:hover { background: var(--orange); color: white; }
+.button-icon { font-size: 15px; font-weight: 800; }
+
+.hero-art {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 52%;
+  height: 465px;
+  overflow: hidden;
+}
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  left: 2%;
+  bottom: -330px;
+}
+.circle-one { width: 790px; background: #ffeadb; }
+.circle-two { width: 660px; left: 14%; bottom: -320px; background: #ffdac1; }
+.circle-three { width: 520px; left: 27%; bottom: -300px; background: #ffc49d; }
+.hero-art img {
+  position: absolute;
+  z-index: 2;
+  right: -4px;
+  bottom: -1px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  object-position: right bottom;
+}
+
+@media (min-width: 1500px) {
+  .hero { min-height: 520px; }
+  .hero-art { height: 540px; }
+}
+@media (max-width: 900px) {
+  .navbar { margin: 0 auto; width: calc(100% - 48px); }
+  .hero-copy { padding-left: 13%; width: 60%; }
+  .side-text { left: 4px; font-size: 47px; }
+  .hero-art { width: 50%; opacity: .9; }
+  .intro { max-width: 390px; }
+}
+@media (max-width: 650px) {
+  .navbar { height: auto; padding: 22px 0; align-items: center; width: calc(100% - 36px); }
+  .logo { font-size: 27px; }
+  .nav-links { gap: 15px; }
+  .nav-links a { font-size: 12px; }
+  .nav-links .hire-button { padding: 10px 12px; }
+  .side-text { display: none; }
+  .hero { min-height: 690px; align-items: flex-start; }
+  .hero-copy { padding: 55px 24px 0; width: 100%; }
+  .eyebrow { font-size: 24px; }
+  h1 { font-size: 46px; }
+  .intro { font-size: 12px; }
+  .desktop-break { display: none; }
+  .actions { gap: 10px; flex-wrap: wrap; }
+  .outline-button { padding: 0 13px; }
+  .hero-art { width: 100%; height: 360px; }
+  .circle-one { width: 600px; left: 4%; bottom: -270px; }
+  .circle-two { width: 500px; left: 18%; bottom: -260px; }
+  .circle-three { width: 390px; left: 32%; bottom: -235px; }
+}
